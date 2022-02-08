@@ -14,6 +14,14 @@ type Companies struct {
 	Companies []Company `json:"companies"`
 }
 
+type Warehouses struct {
+	Warehouses []Warehouse `json:"warehouses"`
+}
+
+type WarehousesCells struct {
+	WarehousesCells []WarehouseCell `json:"warehouses_cells"`
+}
+
 //Internal user representation
 //Second level of object JSON parsin
 type Company struct {
@@ -24,38 +32,42 @@ type Company struct {
 	KPP  uint64 `json:"kpp"`
 }
 
-type Warehouses struct {
-	ID         uint64 `json:"id"`
-	Name       string `json:"name"`
-	Slug       string `json:"slug"`
-	company_id uint64 `json:"inn"`
-	Address    string `json:"kpp"`
+type Warehouse struct {
+	ID      uint64  `json:"id"`
+	Name    string  `json:"name"`
+	Slug    string  `json:"slug"`
+	Company Company `json:"company"`
+	Address string  `json:"kpp"`
 }
 
-type Stoks struct {
-	ID                   uint64 `json:"id"`
-	Company_aender_id    uint64 `json:"name"`
-	Compani_recioient_id uint64 `json:"slug"`
-	Product_id           uint64 `json:"inn"`
-	Quantity             uint64 `json:"inn"`
-	Warehouse_cell_id    uint64 `json:"inn"`
-	GTD_id               uint64 `json:"kpp"`
+type Stok struct {
+	ID            uint64        `json:"id"`
+	Sender        Company       `json:"sender"`
+	Recipient     Company       `json:"recipient"`
+	Product       Product       `json:"product"`
+	Quantity      uint64        `json:"inn"`
+	WarehouseCell WarehouseCell `json:"warehouse_cell"`
+	GTD           GTD           `json:"gtd"`
+}
+type Product struct {
+	ID   uint64 `json:"id"`
+	Name string `json:"name"`
 }
 
-type Warehouse_cells struct {
-	ID           uint64 `json:"id"`
-	Name         string `json:"name"`
-	Slug         string `json:"inn"`
-	Warehouse_id uint64 `json:"inn"`
+type WarehouseCell struct {
+	ID        uint64    `json:"id"`
+	Name      string    `json:"name"`
+	Slug      string    `json:"inn"`
+	Warehouse Warehouse `json:"warehouse"`
 }
 
-type GTDs struct {
-	ID         uint64 `json:"id"`
-	Country_id uint64 `json:"name"`
-	Number     string `json:"slug1"`
+type GTD struct {
+	ID      uint64  `json:"id"`
+	Country Country `json:"country"`
+	Number  string  `json:"slug1"`
 }
 
-type Countries struct {
+type Country struct {
 	ID      uint64 `json:"id"`
 	Code    uint64 `json:"name"`
 	Country string `json:"slug"`
