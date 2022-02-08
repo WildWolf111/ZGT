@@ -17,11 +17,48 @@ type Companies struct {
 //Internal user representation
 //Second level of object JSON parsin
 type Company struct {
-	ID   int    `json:"id"`
+	ID   uint64 `json:"id"`
 	Name string `json:"name"`
 	Slug string `json:"slug"`
-	INN  int    `json:"inn"`
-	KPP  int    `json:"kpp"`
+	INN  uint64 `json:"inn"`
+	KPP  uint64 `json:"kpp"`
+}
+
+type Warehouses struct {
+	ID         uint64 `json:"id"`
+	Name       string `json:"name"`
+	Slug       string `json:"slug"`
+	company_id uint64 `json:"inn"`
+	Address    string `json:"kpp"`
+}
+
+type Stoks struct {
+	ID                   uint64 `json:"id"`
+	Company_aender_id    uint64 `json:"name"`
+	Compani_recioient_id uint64 `json:"slug"`
+	Product_id           uint64 `json:"inn"`
+	Quantity             uint64 `json:"inn"`
+	Warehouse_cell_id    uint64 `json:"inn"`
+	GTD_id               uint64 `json:"kpp"`
+}
+
+type Warehouse_cells struct {
+	ID           uint64 `json:"id"`
+	Name         string `json:"name"`
+	Slug         string `json:"inn"`
+	Warehouse_id uint64 `json:"inn"`
+}
+
+type GTDs struct {
+	ID         uint64 `json:"id"`
+	Country_id uint64 `json:"name"`
+	Number     string `json:"slug"`
+}
+
+type Countries struct {
+	ID      uint64 `json:"id"`
+	Code    uint64 `json:"name"`
+	Country string `json:"slug"`
 }
 
 //Функция для распечатывания User
