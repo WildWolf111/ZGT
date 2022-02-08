@@ -1,0 +1,11 @@
+{
+    "companies" : [
+        {
+            "id" : 3213,
+            "name" : "ID-Close",
+            "slug" : "ID-Close",
+            "inn" : 123343141,
+            "kpp" : 4321541
+        }
+    ]  
+}
