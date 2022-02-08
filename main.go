@@ -52,7 +52,7 @@ type Warehouse_cells struct {
 type GTDs struct {
 	ID         uint64 `json:"id"`
 	Country_id uint64 `json:"name"`
-	Number     string `json:"slug"`
+	Number     string `json:"slug1"`
 }
 
 type Countries struct {
