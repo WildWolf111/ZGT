@@ -7,5 +7,90 @@
             "inn" : 123343141,
             "kpp" : 4321541
         }
-    ]  
+    ],
+      
+
+
+    "warehouses" : [
+        {
+            "id" : 3213,
+            "name" : "ID-Close",
+            "slug" : "ID-Close",
+            "company" : 123343141,
+            "address" : 4321541
+        }
+    ],
+
+    "Stok" : [
+        {
+            "id" : 3213,
+            "name" : "ID-Close",
+            "Recipient " : "ID-Close",
+            "Product" : 123343141,
+            "quantity" : 4321541,
+            "warehouse_cell" : 4321541,
+            "gtd" : 4321541
+            
+        }
+    ],
+
+    "Product" : [
+        {
+            "id" : 3213,
+            "name" : "ID-Close"
+        }
+    ],
+
+    "WarehouseCells" : [
+        {
+            "id" : 3213,
+            "name" : "ID-Close",
+            "slug" : "ID-Close",
+            "warehoouse" : 123343141
+           
+        }
+    ],
+
+    "Country" : [
+        {
+            "id" : 3213,
+            "Code" : "ID-Close",
+            "Country" : "ID-Close"
+        }
+    ],
+
+
+    "GTD" : [
+        {
+            "id" : 3213,
+            "Slug" : "ID-Close",
+            "Country" : "ID-Close"
+            
+        }
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

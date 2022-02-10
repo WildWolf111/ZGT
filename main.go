@@ -64,7 +64,7 @@ type WarehouseCell struct {
 type GTD struct {
 	ID      uint64  `json:"id"`
 	Country Country `json:"country"`
-	Number  string  `json:"slug1"`
+	Number  string  `json:"slug"`
 }
 
 type Country struct {
@@ -74,12 +74,20 @@ type Country struct {
 }
 
 //Функция для распечатывания User
-func PrintUserCompany(c *Company) {
+func PrintCompany(c *Company) {
 	fmt.Printf("ID: %d\n", c.ID)
 	fmt.Printf("Name: %s\n", c.Name)
 	fmt.Printf("Slug: %s\n", c.Slug)
 	fmt.Printf("INN: %d\n", c.INN)
 	fmt.Printf("KPP: %d\n", c.KPP)
+}
+
+func PrintWarehoouse(w *Warehouse) {
+	fmt.Printf("ID: %d\n", w.ID)
+	fmt.Printf("Name: %s\n", w.Name)
+	fmt.Printf("Slug: %s\n", w.Slug)
+	fmt.Printf("Company: %s,%d,%s\n", w.Company.Name, w.Company.ID, w.Company.Slug)
+	fmt.Printf("Address: %s\n", w.Address)
 }
 
 //1. Рассмотрим процесс десериализации (то есть когда из последовательности в объект)
@@ -95,7 +103,7 @@ func main() {
 	//2. Теперь десериализуем содержимое jsonFile в экземпляр Go
 	// Инициализируем экземпляр Users
 	var companies Companies
-
+	var warehouses Warehouses
 	// Вычитываем содержимое jsonFile в ВИДЕ ПОСЛЕДОВАТЕЛЬНОСТИ БАЙТ!
 	byteValue, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
@@ -106,6 +114,11 @@ func main() {
 	json.Unmarshal(byteValue, &companies)
 	for _, c := range companies.Companies {
 		fmt.Println("================================")
-		PrintUserCompany(&c)
+		PrintCompany(&c)
+	}
+	json.Unmarshal(byteValue, &warehouses)
+	for _, w := range warehouses.Warehouses {
+		fmt.Println("================================")
+		PrintWarehoouse(&w)
 	}
 }
