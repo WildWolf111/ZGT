@@ -2,8 +2,29 @@
     "companies" : [
         {
             "id" : 3213,
-            "name" : "ID-Close",
-            "slug" : "ID-Close",
+            "name" : "Partis-m",
+            "slug" : "partism",
+            "inn" : 123343141,
+            "kpp" : 4321541
+        },
+        {
+            "id" : 3214,
+            "name" : "Regidon",
+            "slug" : "regidon",
+            "inn" : 123343141,
+            "kpp" : 4321541
+        },
+        {
+            "id" : 3213,
+            "name" : "Partism1",
+            "slug" : "partism1",
+            "inn" : 123343141,
+            "kpp" : 4321541
+        },
+        {
+            "id" : 3214,
+            "name" : "Ugidon",
+            "slug" : "ugidon",
             "inn" : 123343141,
             "kpp" : 4321541
         }
